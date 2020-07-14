@@ -50,7 +50,7 @@ def archive():
             print("Archive done.")
             break
         else:
-            print("No jpg found. Aborting")
+            print("No jpgs found. Aborting")
             exit(0)
 
 def zipToCbr():
@@ -73,11 +73,10 @@ def deleteTempJPG():
     for file in os.listdir("tmp"):
         os.remove(os.path.join("tmp", file))
 
-#Program
+#Actual script
 getFiles()
 makeTmpDir()
 
-#Test
 for file in files:
     convert(file)
     moveJPGs()
@@ -90,5 +89,3 @@ cbzToCbr()
 
 shutil.rmtree("tmp")
 print("Temporary folder cleaned. Process completed.")
-
-# python pdftocbr.py
